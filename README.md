@@ -1,5 +1,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0900eacbab7f4cb2a92ec99b2c2b6f03)](https://www.codacy.com/app/Javi1499/06-app-agenda-Javi1499?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=POO-2019-2K/06-app-agenda-Javi1499&amp;utm_campaign=Badge_Grade)
 
+[![codebeat badge](https://codebeat.co/badges/ddf466fa-de12-483a-a8d1-47d03d048641)](https://codebeat.co/projects/github-com-poo-2019-2k-06-app-agenda-javi1499-master)
+
 # Ejercicio 6 La Agenda
 
 ## Tiempo para realizar la actividad
