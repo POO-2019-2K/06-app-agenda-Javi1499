@@ -1,4 +1,3 @@
-
 import Contacto from "./Contacto.js";
 import Agenda from "./Agenda.js";
 
@@ -11,23 +10,23 @@ class Main {
 
             if (form.checkValidity() === true) {
 
-            let nombre = document.querySelector("#nombre").value;
-            let email = document.querySelector("#email").value;
-            let fechaN = document.querySelector("#fechaN").value;
-            let telefono = document.querySelector("#telefono").value;
+                let nombre = document.querySelector("#nombre").value;
+                let email = document.querySelector("#email").value;
+                let fechaN = document.querySelector("#fechaN").value;
+                let telefono = document.querySelector("#telefono").value;
 
-            let objagenda = {
-                nombre: nombre,
-                email: email,
-                fechaN: fechaN,
-                telefono: telefono,
+                let objagenda = {
+                    nombre: nombre,
+                    email: email,
+                    fechaN: fechaN,
+                    telefono: telefono,
+                }
+
+                let contacto = new Contacto(objagenda);
+
+                agenda.addContacto(contacto);
             }
-
-            let contacto = new Contacto(objagenda);
-
-            agenda.addContacto(contacto);
-        }
-        form.classList.add("was-validated");
+            form.classList.add("was-validated");
 
 
         })
