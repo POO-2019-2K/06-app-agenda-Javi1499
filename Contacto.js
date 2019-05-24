@@ -14,11 +14,19 @@ export default class DContactos {
         return this._email
     }
 
-    get fechaN(){
-        return this._fechaN
-    }
+    
 
     get telefono(){
         return this._telefono
+    }
+
+    getFechaN(){
+        let d = this._fechaN.getDate() + this._fechaN.getMonth() + "/" + this._fechaN.getFullYear();
+        return d;
+    }
+
+    
+    get fechaN(){
+        return this._fechaN
     }
 } 

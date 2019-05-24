@@ -12,7 +12,11 @@ class Main {
 
                 let nombre = document.querySelector("#nombre").value;
                 let email = document.querySelector("#email").value;
-                let fechaN = document.querySelector("#fechaN").value;
+                let sfechaN = document.querySelector("#fechaN").value;
+                sfechaN = sfechaN.split('-');
+
+                let fechaN = new Date(sfechaN[0], sfechaN[1], sfechaN[2]);
+
                 let telefono = document.querySelector("#telefono").value;
 
                 let objagenda = {
