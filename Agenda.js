@@ -80,6 +80,25 @@ export default class Agenda {
         return foundAt;
     }
 
+
+    sortByName() {
+        this._contactoArray.sort(function (a, b) {
+            if (a.nombre > b.nombre) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
+        localStorage.setItem('contacto1', JSON.stringify(this._contactoArray));
+    }
+
+    sortByAge() {
+        this._contactoArray.sort(function (a, b) {
+            return (a.edad - b.eda)
+        })
+        localStorage.setItem('contacto1', JSON.stringify(this._contactoArray));
+    }
+
     addContacto(e) {
         let found = this._contacto(e.email);
 
@@ -91,7 +110,9 @@ export default class Agenda {
             });
             return;
         }
-        this._showInTable(e);
+
+        this._showInTable(e);\
+    this._contactoArray.sort()
         localStorage.setItem("contacto1", JSON.stringify(this._contactoArray));
         localStorage.setItem("contacto1", JSON.stringify(this._contactoArray));
     }

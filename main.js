@@ -7,6 +7,9 @@ class Main {
 
         document.querySelector("#btnAdd").addEventListener("click", () => {
             let form = document.querySelector("#form");
+let select = documen.querySelector("#select");
+
+            if (select.value = 1){
 
             if (form.checkValidity() === true) {
 
@@ -33,7 +36,7 @@ class Main {
             form.classList.add("was-validated");
 
 
-        })
+        }})
     }
 }
 
