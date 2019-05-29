@@ -21,12 +21,19 @@ export default class DContactos {
     }
 
     getFechaN(){
-        let d = this._fechaN.getDate() + this._fechaN.getMonth() + "/" + this._fechaN.getFullYear();
+        let d = this._fechaN.getDate()+ "/" + this._fechaN.getMonth() + "/" + this._fechaN.getFullYear();
         return d;
     }
 
-    
+
     get fechaN(){
         return this._fechaN
     }
+
+    getAge() {
+        let oneDay= (24*60*60*1000);
+        let oneYear = oneDay * 365;
+        let differenceMs = Math.abs(new Date() - this._fechaN);
+        return Math.round(differenceMs / oneYear);
+        }
 } 

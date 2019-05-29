@@ -15,6 +15,7 @@ export default class Agenda {
             return;
         }
         lsContactos.forEach((e, index) => {
+            e.fechaN = new Date(e.fechaN)
             this._showInTable(new Contacto(e));
         });
     }
@@ -50,7 +51,7 @@ export default class Agenda {
 
         cellNombre.innerHTML = contacto.nombre;
         cellEmail.innerHTML = contacto.email;
-        cellFechaN.innerHTML = contacto.fechaN;
+        cellFechaN.innerHTML = contacto.getAge();
         cellTelefono.innerHTML = contacto.telefono;
 
         this._addEditDeleteToRow(row);
@@ -79,9 +80,19 @@ export default class Agenda {
         console.log(foundAt);
         return foundAt;
     }
+    _ContactoActualizar() {
+        if (localStorage.getItem("contacto1") != null) {
+            this._contactoArray = JSON.parse(localStorage.getItem("contacto1"));
+        }
+    }
+
+    getContactoGuardar() {
+        this._ContactoActualizar();
+        return this._contactoArray;
+    }
 
 
-    sortByName() {
+    sortByName1() {
         this._contactoArray.sort(function (a, b) {
             if (a.nombre > b.nombre) {
                 return 1;
@@ -92,12 +103,24 @@ export default class Agenda {
         localStorage.setItem('contacto1', JSON.stringify(this._contactoArray));
     }
 
-    sortByAge() {
+    sortByAge1() {
         this._contactoArray.sort(function (a, b) {
             return (a.edad - b.eda)
         })
         localStorage.setItem('contacto1', JSON.stringify(this._contactoArray));
     }
+
+
+    sortByName() {
+        this._contactoArray.sortByName1();
+        this.update(this._contactoArray.getContactoGuardar());
+    }
+
+    sortByAge() {
+        this._contactoArray.sortByAge1();
+        this.update(this._contactoArray.getContactoGuardar());
+    }
+
 
     addContacto(e) {
         let found = this._contacto(e.email);
@@ -111,13 +134,13 @@ export default class Agenda {
             return;
         }
 
-        this._showInTable(e);\
-    this._contactoArray.sort()
+        this._showInTable(e);
+
+        this._contactoArray.sort()
         localStorage.setItem("contacto1", JSON.stringify(this._contactoArray));
         localStorage.setItem("contacto1", JSON.stringify(this._contactoArray));
     }
-
-
+    
 
 
 }

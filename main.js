@@ -7,9 +7,7 @@ class Main {
 
         document.querySelector("#btnAdd").addEventListener("click", () => {
             let form = document.querySelector("#form");
-let select = documen.querySelector("#select");
 
-            if (select.value = 1){
 
             if (form.checkValidity() === true) {
 
@@ -36,8 +34,17 @@ let select = documen.querySelector("#select");
             form.classList.add("was-validated");
 
 
-        }})
+        })
+        
+        document.querySelector("#select").addEventListener("change", () => {
+            if(document.querySelector("#select").value === "nombre"){
+                agenda.sortByName();
+            }else{
+                agenda.sortByAge();
+            }
+        });
     }
-}
 
+    
+}
 let m = new Main();
